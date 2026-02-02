@@ -18,10 +18,10 @@ CREATE TABLE tb_user (
     nis VARCHAR(20) UNIQUE NOT NULL,
     nama VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    sandi VARCHAR(50) NOT NULL,
+    password TEXT NOT NULL,
     jenis_kelamin ENUM('L', 'P') NOT NULL,
     id_kelas INT,
-    peran ENUM('admin', 'user') NOT NULL,
+    role ENUM('admin', 'user') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
     CONSTRAINT fk_kelas
@@ -69,3 +69,4 @@ CREATE TABLE tb_feedback (
         REFERENCES tb_aspirasi(id_aspirasi)
         ON DELETE CASCADE
 );
+
